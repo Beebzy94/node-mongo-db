@@ -22,3 +22,13 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// UPDATE
+router.put('/update/:id', async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json({ message: 'Product updated', product });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
