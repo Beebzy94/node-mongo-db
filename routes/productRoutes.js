@@ -32,3 +32,13 @@ router.put('/update/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// DELETE
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Product deleted' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
