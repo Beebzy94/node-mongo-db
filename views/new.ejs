@@ -1,0 +1,46 @@
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6">Add New Item</h2>
+  
+  <form action="/new_products" method="POST" class="bg-white rounded-lg shadow-md p-6">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+      <input type="text" id="name" name="name" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 font-medium mb-2">Description</label>
+      <textarea id="description" name="description" rows="3"
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div>
+        <label for="price" class="block text-gray-700 font-medium mb-2">Price</label>
+        <input type="number" id="price" name="price" step="0.01" min="0" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <div>
+        <label for="category" class="block text-gray-700 font-medium mb-2">Category</label>
+        <select id="category" name="category"
+          class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Home">Home</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="flex justify-end space-x-4">
+      <a href="/" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition">
+        Cancel
+      </a>
+      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+        Save Item
+      </button>
+    </div>
+  </form>
+</div>
